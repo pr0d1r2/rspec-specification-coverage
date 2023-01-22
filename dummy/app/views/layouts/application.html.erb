@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t('.title') %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'tailwind', 'inter-font', 'data-turbo-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'data-turbo-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+  <header class="bg-gray-700 container mx-auto mt-14 px-5 flex">
+    <h1 class="<%= top_header_class %>"><%= t('.header') %></h1>
+  </header>
+  <body class="bg-gray-700">
+    <main class="bg-gray-700 container mx-auto mt-12 px-5 flex">
+      <%= render 'sidebar' %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+# Copyright (c) 2023 by Marcin Nowicki
+# frozen_string_literal: true
+
+directories %w[config lib spec]
+
+RSPEC_CONFIG = {
+  cmd: 'bundle exec rspec',
+  cmd_additional_args: '--format progress',
+  all_on_start: true,
+  all_after_pass: true,
+  halt_on_fail: true,
+  results_file: '/tmp/.guard_rspec_results',
+  run_all: {
+    cmd: "bundle exec parallel_rspec -o '",
+    cmd_additional_args: "'"
+  }
+}.freeze
+
+guard :rspec, RSPEC_CONFIG do
+  require 'guard/rspec/dsl'
+  dsl = ::Guard::RSpec::Dsl.new(self)
+
+  rspec = dsl.rspec
+  watch(rspec.spec_helper)
+  watch(rspec.spec_files)
+
+  ruby = dsl.ruby
+  dsl.watch_spec_files_for(ruby.lib_files)
+end
+
+RUBOCOP_CONFIG = {
+  cli: '--display-cop-names --parallel',
+  all_on_start: true,
+  halt_on_fail: true
+}.freeze
+
+guard :rubocop, RUBOCOP_CONFIG do
+  watch(/.+\.rb$/)
+  watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| ::File.dirname(m[0]) }
+  %w[config/Gemfile config/Guardfile config/rspec-specification-coverage.gemspec].each { |file| watch(file) }
+end
+
+YARD_CONFIG = {
+  host: 'localhost',
+  halt_on_fail: true,
+  stdout: 'log/yard.log',
+  stderr: 'log/yard.err'
+}.freeze
+
+guard 'yard', YARD_CONFIG do
+  watch(%r{lib/.+\.rb})
+end

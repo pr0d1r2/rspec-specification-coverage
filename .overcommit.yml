@@ -1,0 +1,200 @@
+---
+
+CommitMsg:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  CapitalizedSubject:
+    enabled: true
+  EmptyMessage:
+    enabled: true
+  HardTabs:
+    enabled: true
+  RussianNovel:
+    enabled: true
+  SingleLineSubject:
+    enabled: true
+  SpellCheck:
+    enabled: true
+    env:
+      DICTIONARY: '.hunspell/en_US'
+  TextWidth:
+    enabled: true
+  TrailingPeriod:
+    enabled: true
+
+PostCheckout:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  BundleInstall:
+    enabled: true
+  YarnInstall:
+    enabled: true
+
+PostCommit:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  BundleInstall:
+    enabled: true
+  YarnInstall:
+    enabled: true
+
+PostMerge:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  BundleInstall:
+    enabled: true
+  YarnInstall:
+    enabled: true
+
+PostRewrite:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  BundleInstall:
+    enabled: true
+  YarnInstall:
+    enabled: true
+
+PreCommit:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  BrokenSymlinks:
+    enabled: true
+  BundleAudit:
+    enabled: true
+  BundleCheck:
+    enabled: true
+  BundleOutdated:
+    enabled: true
+    on_warn: warn
+  CaseConflicts:
+    enabled: true
+  CodeSpellCheck:
+    enabled: true
+    command: ['bundle', 'exec', 'alfonsox']
+    exclude:
+      - 'dummy/**/*'
+  CssLint:
+    enabled: true
+    required_executable: 'node_modules/.bin/csslint'
+    exclude:
+      - 'doc/**/*.css'
+      - 'app/assets/stylesheets/application.tailwind.css'
+  EsLint:
+    enabled: true
+    required_executable: 'node_modules/.bin/eslint'
+    command: ['node_modules/.bin/eslint', '--config', '.eslintrc.js']
+  Fasterer:
+    enabled: true
+    command: ['bundle', 'exec', 'fasterer']
+  FileSize:
+    enabled: true
+  FixMe:
+    enabled: true
+    keywords:
+      - 'TODO'
+      - 'FIXME'
+    exclude:
+      - '.alfonsox.yml'
+      - '.overcommit.yml'
+      - 'bin/dashboards'
+      - 'TODO.md'
+      - 'vendor/mdspell/ignored.txt'
+  Flay:
+    enabled: true
+    command: ['bundle', 'exec', 'flay']
+  HardTabs:
+    enabled: true
+    exclude:
+      - 'doc/**/*.html'
+      - 'doc/**/*.css'
+  ImageOptim:
+    enabled: true
+    command: ['bundle', 'exec', 'image_optim']
+    exclude:
+      - 'z-features/**/*.png'
+  JsonSyntax:
+    enabled: true
+  LineEndings:
+    enabled: true
+    exclude:
+      - 'z-features/**/*.png'
+      - 'public/**/*.png'
+      - '.yardoc/objects/root.dat'
+      - 'db/graph.pdf'
+  LocalPathsInGemfile:
+    enabled: true
+  Mdl:
+    enabled: true
+    command: ['bundle', 'exec', 'mdl']
+    exclude:
+      - 'TODO.md'
+  MergeConflicts:
+    enabled: true
+  Reek:
+    enabled: true
+    command: ['bundle', 'exec', 'reek']
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop', '--parallel', '--config', '.rubocop.yml']
+  RubySyntax:
+    enabled: true
+  ShellCheck:
+    enabled: true
+    include:
+      - bin/*
+    exclude:
+      - bin/bundle
+      - bin/importmap
+      - bin/rails
+      - bin/rake
+      - bin/setup
+  Standard:
+    enabled: true
+    required_executable: 'node_modules/.bin/standard'
+    exclude:
+      - 'doc/**/*.js'
+  Stylelint:
+    enabled: true
+    required_executable: 'node_modules/.bin/stylelint'
+  TrailingWhitespace:
+    enabled: true
+    exclude:
+      - 'doc/**/*.html'
+      - 'doc/**/*.js'
+  YamlLint:
+    enabled: true
+  YamlSyntax:
+    enabled: true
+  YardCoverage:
+    enabled: true
+
+PrePush:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  RSpec:
+    enabled: true
+    command: ['bundle', 'exec', 'rake', 'parallel:spec']
+    env:
+      NO_FEATURE_SCREENSHOT: '1'
+
+PreRebase:
+  ALL:
+    quiet: false
+    on_warn: fail
+    install_command: 'bin/setup'
+  MergedCommits:
+    enabled: true

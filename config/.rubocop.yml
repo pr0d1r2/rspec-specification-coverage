@@ -1,0 +1,70 @@
+---
+AllCops:
+  NewCops: enable
+  UseCache: true
+  SuggestExtensions: true
+  EnabledByDefault: true
+  TargetRubyVersion: 3.1.3
+  Exclude:
+    - 'dummy/**/*'
+
+require:
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-thread_safety
+  - rubocop-require_tools
+
+Style/MissingElse:
+  Enabled: false
+
+RSpec/AlignLeftLetBrace:
+  Enabled: false
+
+RSpec/AlignRightLetBrace:
+  Enabled: false
+
+Style/Copyright:
+  # Disabled as broken, uncomment to do auto-correction on new files.
+  Enabled: false
+  AutocorrectNotice: 'Copyright (c) 2023 by Marcin Nowicki'
+
+Layout/RedundantLineBreak:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: true
+  Exclude:
+    - 'spec/rspec/specification_coverage/matchers/be_covered_with_specification_spec.rb'
+    - 'spec/specification_coverage_spec.rb'
+
+Require/MissingRequireStatement:
+  Enabled: true
+  Exclude:
+    - 'spec/rspec/specification_coverage/ruby_file_details_spec.rb'
+    - 'spec/rspec/specification_coverage/git_files_changed_spec.rb'
+    - 'lib/rspec/specification_coverage/matchers/be_covered_with_specification.rb'
+
+Lint/ConstantResolution:
+  Enabled: true
+  Exclude:
+    - 'lib/rspec/specification_coverage/ruby_file_details.rb'
+    - 'Guardfile'
+
+Style/StringHashKeys:
+  Enabled: true
+  Exclude:
+    - 'rspec-specification-coverage.gemspec'
+    - 'config/rspec-specification-coverage.gemspec'
+
+Naming/FileName:
+  Enabled: true
+  Exclude:
+    - 'lib/rspec-specification-coverage.rb'
+
+Metrics/BlockLength:
+  Enabled: true
+  Max: 66
+
+Layout/LineLength:
+  Enabled: true
+  Max: 122

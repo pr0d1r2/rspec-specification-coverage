@@ -1,0 +1,31 @@
+---
+
+Paths:
+  - 'lib/**.rb'
+  - 'spec/**.rb'
+Dictionaries:
+  EnglishDictionaryFromGem:
+    type: 'hunspell'
+    language: 'en_US'
+  DevelopmentDictionary:
+    type: 'word_list'
+    word_list:
+      - Marcin
+      - Nowicki
+      - RSpec
+      - gsub
+      - erb
+      - matchers
+      - boolean
+      - matcher
+      - dirname
+      - basename
+      - chdir
+      - HTML
+      - eq
+      - globbing
+      - unassignable
+      - tmp
+      - txt
+      - srand
+      - md

@@ -1,0 +1,11 @@
+.bundle/
+.yardoc/
+doc/
+spec/examples.txt
+.hunspell/
+log/yard.err
+log/yard.log
+tmp/spec_examples.txt
+tmp/parallel_runtime_rspec.log
+rspec-specification-coverage-*.gem
+coverage/
