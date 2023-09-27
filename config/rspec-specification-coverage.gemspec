@@ -30,6 +30,7 @@
   s.require_paths = ['lib']
 
   s.add_runtime_dependency('activesupport', '~> 7.0.4.1')
+  s.add_runtime_dependency('nokogiri', '~> 1.14.3')
 
   s.add_development_dependency('alfonsox', '~> 0.2')
   s.add_development_dependency('bundle-audit', '~> 0.1')
