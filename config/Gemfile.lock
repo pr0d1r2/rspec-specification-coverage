@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    rspec-specification-coverage (0.1.0)
-      activesupport (~> 7.0.4.1)
+    rspec-specification-coverage (0.2.0)
+      activesupport (>= 5.0)
       nokogiri (~> 1.14.3)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.4.1)
+    activesupport (7.0.8)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -52,7 +52,7 @@ GEM
       guard (>= 1.1.0)
       yard (>= 0.7.0)
     hunspell (1.1.0)
-    i18n (1.12.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     iniparse (1.5.0)
     json (2.6.3)
@@ -72,7 +72,7 @@ GEM
       mixlib-config (>= 2.2.1, < 4)
       mixlib-shellout
     method_source (1.0.0)
-    minitest (5.17.0)
+    minitest (5.20.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
       tomlrb
@@ -155,7 +155,7 @@ GEM
     simplecov_json_formatter (0.1.4)
     thor (1.2.1)
     tomlrb (2.0.3)
-    tzinfo (2.0.5)
+    tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
     webrick (1.7.0)
