@@ -2,7 +2,7 @@
 
 ::Gem::Specification.new do |s|
   s.name = 'rspec-specification-coverage'
-  s.version = '0.1.2'
+  s.version = '0.1.3'
   s.required_ruby_version = '~> 3.1'
   s.licenses = ['MIT']
   s.summary = 'Specify RSpec specification coverage.'
